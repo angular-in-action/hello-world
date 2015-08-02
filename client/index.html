@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Stock Tracker</title>
+  <meta charset="utf-8">
+  <base href="/">
+  <script>baseElement = document.querySelector('base');baseElement.attr = baseElement.getAttribute;</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Angular2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-orange.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body style="background: #f3f3f3">
+
+  <h1>Stock Tracker</h1>
+
+  <!-- ES6 -->
+  <script src="/lib/traceur-runtime.js"></script>
+  <script src="/lib/system.js"></script>
+  <!-- Angular Deps -->
+  <script src="/lib/reflect.js"></script>
+  <script src="/lib/zone.js"></script>
+  <script src="/lib/long-stack-trace-zone.js"></script>
+  <!-- App -->
+  <script>
+    System.defaultJSExtensions = true;
+    System.config({
+      paths: {
+        'angular2/*': '/lib/angular2/*'
+      },
+      meta: {
+        '/lib/rx.js': {
+          format: 'cjs'
+        }
+      },
+      map: {
+        rx: '/lib/rx.js'
+      }
+    });
+  </script>
+</body>
+
+</html>
