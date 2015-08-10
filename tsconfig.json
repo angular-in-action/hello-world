@@ -17,6 +17,8 @@
         "client/**/*.ts"
     ],
     "files": [
-        "typings/tsd.d.ts"
+        "typings/tsd.d.ts",
+        "client/bootstrap.ts",
+        "client/components/app.ts"
     ]
 }
