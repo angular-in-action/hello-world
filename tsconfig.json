@@ -20,6 +20,7 @@
         "typings/tsd.d.ts",
         "client/bootstrap.ts",
         "client/components/app.ts",
+        "client/components/summary.ts",
         "client/services/stocks.ts"
     ]
 }
