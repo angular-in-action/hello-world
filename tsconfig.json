@@ -19,6 +19,7 @@
     "files": [
         "typings/tsd.d.ts",
         "client/bootstrap.ts",
-        "client/components/app.ts"
+        "client/components/app.ts",
+        "client/services/stocks.ts"
     ]
 }
