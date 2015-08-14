@@ -21,6 +21,7 @@
         "client/bootstrap.ts",
         "client/components/app.ts",
         "client/components/dashboard.ts",
+        "client/components/manage.ts",
         "client/components/summary.ts",
         "client/services/stocks.ts"
     ]
