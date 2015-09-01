@@ -1,6 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts"/>
+import { Inject } from 'angular2/di';
+import { Http } from 'angular2/http'; 
 
-let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
+let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR', 'CRM'];
 
 export interface StockInterface {
   symbol: string,
@@ -10,6 +12,10 @@ export interface StockInterface {
 }
 
 export class StocksService {
+
+  constructor(@Inject(Http) Http) {
+      this.http = Http;
+  }
 
   get() {
     return stocks;
@@ -23,5 +29,13 @@ export class StocksService {
   remove(stock) {
     stocks.splice(stocks.indexOf(stock), 1);
     return this.get();
+  }
+
+  load(symbols) {
+    if (symbols) {
+      return this.http.get('/api/snapshot?symbols=' + symbols.join())
+        .toRx()
+        .map(res => res.json())
+    }
   }
 }
