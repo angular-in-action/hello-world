@@ -1,7 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
-import {Http, httpInjectables} from 'angular2/http';
+import {httpInjectables} from 'angular2/http';
 
 import {Summary} from './summary';
 import {StocksService, StockInterface} from '../services/stocks';
@@ -27,11 +27,11 @@ export class Dashboard {
   stocks: Array<StockInterface>;
   symbols: Array<string>;
 
-  constructor(http: Http, service: StocksService) {
-
+  constructor(service: StocksService) {
     this.symbols = service.get();
 
     service.load(this.symbols)
     .subscribe(stocks => this.stocks = stocks);
   }
 }
+
