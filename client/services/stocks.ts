@@ -2,7 +2,7 @@
 import { Inject } from 'angular2/di';
 import { Http } from 'angular2/http'; 
 
-let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR', 'CRM'];
+let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
 
 export interface StockInterface {
   symbol: string,
