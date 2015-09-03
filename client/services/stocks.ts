@@ -12,7 +12,7 @@ export interface StockInterface {
 }
 
 export class StocksService {
-
+  http: Http;
   constructor(@Inject(Http) Http) {
       this.http = Http;
   }

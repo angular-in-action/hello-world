@@ -11,19 +11,6 @@ import {StockInterface} from '../services/stocks';
 @View({
   directives: [coreDirectives, CSSClass],
   template: `
-<style>
-  .stock-card.mdl-card {
-    background: #333;
-  }
-  .stock-card.mdl-card.increase {
-    background: #558B2F;
-    color: #fff;
-  }
-  .stock-card.mdl-card.decrease {
-    background: #C62828;
-    color: #fff;
-  }
-</style>
 <div class="mdl-card stock-card mdl-shadow--2dp" [class]="{increase: isPositive(), decrease: isNegative()}" style="width: 100%;">
   <span *ng-if="stock">
     <div class="mdl-card__title">

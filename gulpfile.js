@@ -6,6 +6,7 @@ var del = require('del');
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
 var tsd = require('tsd');
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
@@ -115,6 +116,7 @@ gulp.task('css', function() {
       extension: '.css'
     }))
     .pipe(sourcemaps.init())
+    .pipe(concat('app.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.distClient));
 });
