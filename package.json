@@ -4,7 +4,7 @@
   "description": "Stock tracker in Angular 2",
   "main": "server/bootstrap.js",
   "scripts": {
-    "start": "npm install && node ./node_modules/gulp/bin/gulp.js start"
+    "start": "npm install && node ./node_modules/gulp/bin/gulp.js go"
   },
   "repository": {
     "type": "git",
