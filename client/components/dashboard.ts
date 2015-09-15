@@ -1,17 +1,17 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
-import {httpInjectables} from 'angular2/http';
+import {Component, View, Directive, NgIf, NgFor} from 'angular2/angular2';
+import {HTTP_BINDINGS} from 'angular2/http';
 
 import {Summary} from './summary';
 import {StocksService, StockInterface} from '../services/stocks';
 
 @Component({
   selector: 'dashboard',
-  viewInjector: [httpInjectables, StocksService]
+  viewBindings: [HTTP_BINDINGS, StocksService]
 })
 @View({
-  directives: [coreDirectives, Summary],
+  directives: [NgIf, NgFor, Summary],
   template: `
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col" *ng-if="!stocks" style="text-align: center;">
@@ -34,4 +34,3 @@ export class Dashboard {
     .subscribe(stocks => this.stocks = stocks);
   }
 }
-

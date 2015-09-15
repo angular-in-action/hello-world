@@ -1,6 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {Component, View, coreDirectives, CSSClass} from 'angular2/angular2';
+import {Component, View, NgIf, NgClass} from 'angular2/angular2';
 
 import {StockInterface} from '../services/stocks';
 
@@ -9,9 +9,9 @@ import {StockInterface} from '../services/stocks';
   properties: ['stock: symbol']
 })
 @View({
-  directives: [coreDirectives, CSSClass],
+  directives: [NgIf, NgClass],
   template: `
-<div class="mdl-card stock-card mdl-shadow--2dp" [class]="{increase: isPositive(), decrease: isNegative()}" style="width: 100%;">
+<div class="mdl-card stock-card mdl-shadow--2dp" [ng-class]="{increase: isPositive(), decrease: isNegative()}" style="width: 100%;">
   <span *ng-if="stock">
     <div class="mdl-card__title">
       <h4 style="color: #fff; margin: 0">

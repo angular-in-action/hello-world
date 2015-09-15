@@ -1,16 +1,17 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {Component, View, coreDirectives} from 'angular2/angular2';
-import {formDirectives, Control, ControlGroup} from 'angular2/forms';
+import {Component, View, NgFor} from 'angular2/angular2';
+import {FORM_BINDINGS, FORM_DIRECTIVES, FormBuilder} from 'angular2/angular2';
+import {HTTP_BINDINGS} from 'angular2/http';
 
 import {StocksService} from '../services/stocks';
 
 @Component({
   selector: 'manage',
-  viewInjector: [StocksService]
+  viewBindings: [FORM_BINDINGS, HTTP_BINDINGS, StocksService]
 })
 @View({
-  directives: [coreDirectives, formDirectives],
+  directives: [NgFor, FORM_DIRECTIVES],
   template: `
   <div class="demo-grid-1 mdl-grid">
     <div class="mdl-cell mdl-cell--4-col"></div>
@@ -36,14 +37,16 @@ import {StocksService} from '../services/stocks';
 export class Manage {
   symbols: Array<string>;
   service: StocksService;
-  stockForm: ControlGroup;
+  stockForm: any;
 
   constructor(service: StocksService) {
     this.service = service;
     this.symbols = service.get();
-    this.stockForm = new ControlGroup({
-      stock: new Control('')
-    });
+
+    let builder = new FormBuilder();
+    this.stockForm = builder.group({
+      stock: ['']
+    })
   }
 
   add() {

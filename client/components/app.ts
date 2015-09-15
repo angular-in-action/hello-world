@@ -1,7 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {Component, View, coreDirectives} from 'angular2/angular2';
-import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2/router';
+import {Component, View} from 'angular2/angular2';
+import {RouteConfig, Router, RouterOutlet, RouterLink} from 'angular2/router';
 
 import {Dashboard} from './dashboard';
 import {Manage} from './manage';
@@ -12,11 +12,10 @@ import {Manage} from './manage';
 ])
 
 @Component({
-  selector: 'app',
-  viewInjector: [routerInjectables]
+  selector: 'app'
 })
 @View({
-  directives: [coreDirectives, RouterOutlet, RouterLink],
+  directives: [RouterOutlet, RouterLink],
   template: `
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
