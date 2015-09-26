@@ -1,14 +1,13 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 import {Component, View, Directive, NgIf, NgFor} from 'angular2/angular2';
-import {HTTP_BINDINGS} from 'angular2/http';
 
 import {Summary} from './summary';
 import {StocksService, StockInterface} from '../services/stocks';
 
 @Component({
   selector: 'dashboard',
-  viewBindings: [HTTP_BINDINGS, StocksService]
+  viewBindings: [StocksService]
 })
 @View({
   directives: [NgIf, NgFor, Summary],

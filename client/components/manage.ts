@@ -2,13 +2,12 @@
 
 import {Component, View, NgFor} from 'angular2/angular2';
 import {FORM_BINDINGS, FORM_DIRECTIVES, FormBuilder} from 'angular2/angular2';
-import {HTTP_BINDINGS} from 'angular2/http';
 
 import {StocksService} from '../services/stocks';
 
 @Component({
   selector: 'manage',
-  viewBindings: [FORM_BINDINGS, HTTP_BINDINGS, StocksService]
+  viewBindings: [FORM_BINDINGS, StocksService]
 })
 @View({
   directives: [NgFor, FORM_DIRECTIVES],
